@@ -2,3 +2,51 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+#topSection {
+    background: linear-gradient(to bottom, #7E3AF2, #ffffff);
+}
+#midSection {
+    background: linear-gradient(to bottom, #ffffff, #7E3AF2);
+}
+#teamSection {
+    background: linear-gradient(to bottom, #7E3AF2, #ffffff);
+}
+#footer {
+    background: linear-gradient(to bottom, #ffffff, #7E3AF2);
+}
+
+.header1 {
+    font-size: 5em;
+}
+.subheader1 {
+    font-size: 2em;
+}
+
+@keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+  }
+
+  .pulse-text {
+    animation: pulse 5s ease infinite; /* 5 seconds duration, ease timing function, and repeat infinitely */
+  }
+  
+.sticky-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white; /* Set your desired background color */
+    z-index: 1000; /* Adjust the z-index as needed */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow if desired */
+}

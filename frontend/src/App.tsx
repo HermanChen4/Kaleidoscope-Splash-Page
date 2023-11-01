@@ -1,10 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Team from './components/Team';
+import Footer from './components/Footer'
+import Midsection from './components/Midsection';
+import Topsection from './components/Topsection';
 
 function App() {
   return (
-    <Navbar />
+    <div>
+      <Navbar />
+      <div className='flex justify-around' id='topSection'> 
+        <Topsection />
+      </div>
+    <div id='midSection'>
+     <Midsection/>
+    </div>
+      <div id='teamSection'> 
+      <Team />
+      </div>
+      <div id='footer'> 
+      <Footer />
+      </div>
+    </div>
   );
 }
 
