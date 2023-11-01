@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+    "module": "CommonJS",
+      "target": "ES6" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+      "jsx": "react" /* Specify what JSX code is generated. */,
+      // "module": "commonjs" /* Specify what module code is generated. */,
+      "sourceMap": true /* Create source map files for emitted JavaScript files. */,
+      "removeComments": true /* Disable emitting comments. */,
+      "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+        "@heroicons/react/outline": ["../node_modules/@heroicons/react/outline"],
+        "*": ["node_modules/*", "frontend/*", "backend/*"] // Modify this to match your project structure
+    }
+
+    },
+    "types": ["@heroicons/react"],
+    "exclude": ["node_modules"],
+    "typeRoots": [
+    "./typings",
+    "./node_modules/@types/"
+    ]
+}
