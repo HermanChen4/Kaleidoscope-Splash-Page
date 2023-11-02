@@ -1,31 +1,31 @@
-# Stage 1: Build the frontend
+# Multi-stage build: First stage to build the frontend
 FROM node:latest as build-stage
 WORKDIR /app
 
-# Copy and install frontend dependencies
-COPY frontend/package*.json /app/
-RUN npm install
+# Install frontend dependencies
+COPY frontend/package*.json ./frontend/
+RUN cd frontend && npm install
 
-# Copy the frontend source code and build the static assets
-COPY frontend/ /app/
-RUN npm run build
+# Build frontend static files
+COPY frontend/ ./frontend/
+RUN cd frontend && npm run build
 
-# Stage 2: Build the backend
-FROM node:latest as production-stage
+# Second stage to set up the Express server
+FROM node:latest
 WORKDIR /app
 
-# Copy and install backend dependencies
-COPY backend/package*.json /app/
-RUN npm install
+# Install backend dependencies
+COPY backend/package*.json ./backend/
+RUN cd backend && npm install
 
-# Copy the backend source code
-COPY backend/ /app/
+# Copy backend code
+COPY backend/ ./backend/
 
-# Copy the built frontend assets from the build-stage to the public directory of the backend
-COPY --from=build-stage /app/build /app/public
+# Copy built frontend assets
+COPY --from=build-stage /app/frontend/build ./backend/public
 
 # Expose the port the backend listens on
 EXPOSE 3000
 
-# Run the backend server
-CMD ["node", "server.ts"]
+# Start the Express server
+CMD ["npm", "run", "start-express", "--prefix", "backend"]
