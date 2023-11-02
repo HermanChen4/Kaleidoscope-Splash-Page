@@ -14,7 +14,9 @@
 #footer {
     background: linear-gradient(to bottom, #ffffff, #7E3AF2);
 }
-
+#blog {
+    background: linear-gradient(to bottom, #7E3AF2, #ffffff);
+}
 .header1 {
     font-size: 5em;
 }
@@ -40,7 +42,7 @@
   .pulse-text {
     animation: pulse 5s ease infinite; /* 5 seconds duration, ease timing function, and repeat infinitely */
   }
-  
+
 .sticky-navbar {
     position: fixed;
     top: 0;

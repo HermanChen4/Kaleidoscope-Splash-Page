@@ -4,6 +4,7 @@ import { XIcon, MenuIcon } from '@heroicons/react/outline';
 import { PlusIcon } from '@heroicons/react/solid';
 import icon from '../assets/kaleidoscope.png';
 import '../styles/tailwind.css';
+import Blog from './Blog'
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -33,7 +34,7 @@ export default function Example() {
       <Disclosure as="nav" className="bg-white shadow">
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl px-4 lg:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-4 lg:px-8">
               <div className="flex h-16 justify-between">
                 <div className="flex">
                   <div className="-ml-2 mr-2 flex items-center md:hidden">
@@ -49,42 +50,38 @@ export default function Example() {
                     </Disclosure.Button>
                   </div>
                   <div className="flex flex-shrink-0 items-center">
-                    <a href='https://www.codesmith.io/'>
+                    <a href='#'>
                       <img
                         className="h-8 w-auto"
                         src={icon}
-                        alt="Your Company"
+                        alt=""
                       />
                     </a>
+                    <a href='#'>
                     <p className="text-indigo-700 pulse-text font-extrabold">
                             Kaleidoscope
                         </p>
+                        </a>
                   </div>
                   <div className="hidden md:ml-6 md:flex md:space-x-8">
                     {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                     <a
-                      href="#"
+                      href="#topSection"
                       className="inline-flex items-center border-b-2 border-indigo-600 px-1 pt-1 text-lg font-medium text-gray-900"
                     >
                       About
                     </a>
                     <a
-                      href="#"
+                      href="#midSection"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-lg font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Demo
                     </a>
                     <a
-                      href="#"
+                      href="#teamSection"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-lg font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Team
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-lg font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                    >
-                      Contact
                     </a>
                   </div>
                 </div>
@@ -111,6 +108,7 @@ export default function Example() {
           </>
         )}
       </Disclosure>
+      <Blog />
     </div>
   );
 }

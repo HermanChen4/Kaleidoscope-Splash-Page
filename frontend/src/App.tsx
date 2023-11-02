@@ -4,6 +4,7 @@ import Team from './components/Team';
 import Footer from './components/Footer'
 import Midsection from './components/Midsection';
 import Topsection from './components/Topsection';
+import Blog from './components/Blog';
 
 function App() {
   return (
