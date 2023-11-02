@@ -10,10 +10,10 @@ const Topsection: React.FC = () => {
         <div className="p-20 flex items-center">
           <div className="radiating-text">
             <p className="flex items-center justify-center text-indigo-700 header1 pulse-text font-extrabold">
-              open source distributed
+              Open Source Distributed
             </p>
             <p className="flex items-center justify-center text-indigo-700 header1 pulse-text font-extrabold">
-              trace visualizer
+              Trace Visualizer
             </p>
             <div>
               <p className="text-indigo-700 subheader1">
