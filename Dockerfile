@@ -1,31 +1,15 @@
-# Multi-stage build: First stage to build the frontend
-FROM node:latest as build-stage
+FROM ubuntu:20.04  
+# Install Node.js and npm
+RUN apt-get update && apt-get install -y nodejs npm
+
+# Set the working directory
 WORKDIR /app
 
-# Install frontend dependencies
-COPY frontend/package*.json ./frontend/
-RUN cd frontend && npm install
+# Copy your application source code to the Docker image
+COPY . /app
 
-# Build frontend static files
-COPY frontend/ ./frontend/
-RUN cd frontend && npm run build
+# Install your application's dependencies
+RUN npm install
 
-# Second stage to set up the Express server
-FROM node:latest
-WORKDIR /app
-
-# Install backend dependencies
-COPY backend/package*.json ./backend/
-RUN cd backend && npm install
-
-# Copy backend code
-COPY backend/ ./backend/
-
-# Copy built frontend assets
-COPY --from=build-stage /app/frontend/build ./backend/public
-
-# Expose the port the backend listens on
-EXPOSE 3000
-
-# Start the Express server
-CMD ["npm", "run", "start-express", "--prefix", "backend"]
+# Start the application
+CMD ["npm", "start"]

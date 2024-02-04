@@ -81,12 +81,12 @@ module.exports = (env, argv) => {
         },
         // proxy needs to be on a different port than the backend so that all parts of the app can run simultaneously
         proxy: {
-        '/api': 'http://backend:3001',
+        '/api': 'http://backend:3003',
         secure: false,
         },
         compress: false,
         host: '0.0.0.0',
-        port: 3000,
+        port: 3002,
         hot: true,
         historyApiFallback: true,
     },
